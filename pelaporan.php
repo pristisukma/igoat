@@ -95,3 +95,10 @@ $totalRows_lapor = mysql_num_rows($lapor);
 <?php
 mysql_free_result($lapor);
 ?>
+<script src="lib/js/jquery.dataTables.min.js"></script>
+<script src="lib/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $(".table").DataTable();
+  });
+</script>

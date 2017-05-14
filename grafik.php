@@ -1,7 +1,7 @@
 <?php 
-mysql_connect("localhost", "root", "") or
+mysql_connect("localhost", "root", "password") or
     die("Could not connect: " . mysql_error());
-mysql_select_db("coba");
+mysql_select_db("sispakv2");
 
 $result = mysql_query("SELECT id, botol, tetanus FROM inspeksi3");
 

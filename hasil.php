@@ -272,3 +272,10 @@ $totalRows_hasil = mysql_num_rows($hasil);
 <?php
 mysql_free_result($hasil);
 ?>
+<script src="lib/js/jquery.dataTables.min.js"></script>
+<script src="lib/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $(".table").DataTable();
+  });
+</script>
