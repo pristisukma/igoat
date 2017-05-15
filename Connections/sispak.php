@@ -3,8 +3,8 @@
 # Type="MYSQL"
 # HTTP="true"
 $hostname_sispak = "localhost";
-$database_sispak = "coba";
+$database_sispak = "sispakv2";
 $username_sispak = "root";
-$password_sispak = "";
+$password_sispak = "password";
 $sispak = mysql_pconnect($hostname_sispak, $username_sispak, $password_sispak) or trigger_error(mysql_error(),E_USER_ERROR); 
 ?>

@@ -33,7 +33,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 $colname_hasil = "-1";
 if (isset($_GET['id'])) {
-  $colname_hasil = $_GET['id'];
+  $colname_hasil = $_GET['id']+1;
 }
 mysql_select_db($database_sispak, $sispak);
 $query_hasil = sprintf("SELECT inspeksi1.id,   inspeksi1.otot,   inspeksi1.gerak,   inspeksi1.kepala,   inspeksi2.kaki,   inspeksi2.lidah,   inspeksi2.napas,   inspeksi2.kejang,   inspeksi2.date,   inspeksi2.username,   inspeksi3.kembung,   inspeksi3.rahang,   inspeksi3.batuk,   inspeksi3.raisa,   inspeksi3.kelopak,   inspeksi3.botol,   inspeksi3.tetanus FROM inspeksi1,      inspeksi2,      inspeksi3 WHERE inspeksi1.id = inspeksi2.id AND inspeksi2.id = inspeksi3.id AND inspeksi3.id = %s ORDER BY inspeksi1.id DESC", GetSQLValueString($colname_hasil, "int"));
@@ -64,29 +64,29 @@ $totalRows_hasil = mysql_num_rows($hasil);
     <td><?php echo $workcfbotol=$workcfbotol+($row_hasil['otot']*(0.9*(1-$workcfbotol)));?></td>
     <td><?php echo $workcftetanus=$workcftetanus+($row_hasil['otot']*(0.2*(1-$workcftetanus)));?></td>
   </tr>
-  <tr>
+    <tr>
     <td>2</td>
-    <td><?php if($row_hasil['kaki']=="1"){ echo "Ya"; } else { echo "Tidak";}; ?></td>
-    <td>0.7</td>
-    <td>0.5</td>
-    <td><?php echo $workcfbotol=$workcfbotol+($row_hasil['kaki']*(0.3*(1-$workcfbotol)));?></td>
-    <td><?php echo $workcftetanus=$workcftetanus+($row_hasil['kaki']*(0.5*(1-$workcftetanus)));?></td>
-  </tr>
-  <tr>
-    <td>3</td>
     <td><?php if($row_hasil['gerak']=="1"){ echo "Ya"; } else { echo "Tidak";}; ?></td>
     <td>0.3</td>
     <td>0.3</td>
     <td><?php echo $workcfbotol=$workcfbotol+($row_hasil['gerak']*(0.9*(1-$workcfbotol)));?></td>
     <td><?php echo $workcftetanus=$workcftetanus+($row_hasil['gerak']*(0.3*(1-$workcftetanus)));?></td>
   </tr>
-  <tr>
+    <tr>
     <td>4</td>
     <td><?php if($row_hasil['kepala']=="1"){ echo "Ya"; } else { echo "Tidak";}; ?></td>
     <td>1</td>
     <td>0.8</td>
     <td><?php echo $workcfbotol=$workcfbotol+($row_hasil['kepala']*(1*(1-$workcfbotol)));?></td>
     <td><?php echo $workcftetanus=$workcftetanus+($row_hasil['kepala']*(0.8*(1-$workcftetanus)));?></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><?php if($row_hasil['kaki']=="1"){ echo "Ya"; } else { echo "Tidak";}; ?></td>
+    <td>0.7</td>
+    <td>0.5</td>
+    <td><?php echo $workcfbotol=$workcfbotol+($row_hasil['kaki']*(0.3*(1-$workcfbotol)));?></td>
+    <td><?php echo $workcftetanus=$workcftetanus+($row_hasil['kaki']*(0.5*(1-$workcftetanus)));?></td>
   </tr>
   <tr>
     <td>5</td>

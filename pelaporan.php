@@ -72,7 +72,7 @@ $totalRows_lapor = mysql_num_rows($lapor);
             <td><?php echo $row_lapor['id']; ?></td>
             <td><?php echo $row_lapor['botol']; ?></td>
             <td><?php echo $row_lapor['tetanus']; ?></td>
-             <td><a href="hasil.php?id=<?php echo $row_lapor['id']; ?>">Lihat</a></td>
+             <td><a href="hasil.php?id=<?php echo $row_lapor['id']-1; ?>">Lihat</a></td>
           </tr>
           <?php } while ($row_lapor = mysql_fetch_assoc($lapor)); ?>
       </table>
