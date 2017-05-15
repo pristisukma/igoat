@@ -73,7 +73,7 @@ $totalRows_hasil = mysql_num_rows($hasil);
     <td><?php echo $workcftetanus=$workcftetanus+($row_hasil['gerak']*(0.3*(1-$workcftetanus)));?></td>
   </tr>
     <tr>
-    <td>4</td>
+    <td>3</td>
     <td><?php if($row_hasil['kepala']=="1"){ echo "Ya"; } else { echo "Tidak";}; ?></td>
     <td>1</td>
     <td>0.8</td>
@@ -81,7 +81,7 @@ $totalRows_hasil = mysql_num_rows($hasil);
     <td><?php echo $workcftetanus=$workcftetanus+($row_hasil['kepala']*(0.8*(1-$workcftetanus)));?></td>
   </tr>
   <tr>
-    <td>3</td>
+    <td>4</td>
     <td><?php if($row_hasil['kaki']=="1"){ echo "Ya"; } else { echo "Tidak";}; ?></td>
     <td>0.7</td>
     <td>0.5</td>
